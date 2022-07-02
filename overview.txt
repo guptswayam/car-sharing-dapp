@@ -1,0 +1,15 @@
+############################ Features #############################
+1. Owner can list the cars on the platform
+2. Users can rent these cars for some days
+3. Once the car is booked the car will not visible/booked to other Users
+4. Once the booked car get free, it can be booked again
+
+
+############################ Plan Of Attack #########################
+1. We need one Car Contract
+2. In the Car contract we will have all the cars
+3. 
+
+############################ Car Schema ########################
+1. mapping <uint, Car>
+2. Car Struct
