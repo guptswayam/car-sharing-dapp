@@ -1,5 +1,6 @@
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
+import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 
 
 export function activateInjectedProvider(providerName) {
@@ -28,11 +29,21 @@ export function activateInjectedProvider(providerName) {
   }
 }
 
+export const coinbaseWallet = new WalletLinkConnector({
+
+  url: process.env.REACT_APP_ROPSTEN_RPC_URL,
+ 
+  appName: "Car Sharing DApp",
+ 
+  supportedChainIds: [3],
+ 
+ });
+
 export const walletconnect = new WalletConnectConnector({
   rpc: {
-    3: process.env.REACT_APP_ROPSTEN_RPC_URL,
+    3: process.env.REACT_APP_INFURA_ROPSTEN_URL_FOR_WALLET_CONNECT,
   },
-  bridge: "wss://bridge.walletconnect.org",
+  bridge: "https://bridge.walletconnect.org",
   qrcode: true,
   pollingInterval: 12000
 });

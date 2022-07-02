@@ -1,9 +1,10 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap';
-import { activateInjectedProvider, Injected, walletconnect } from '../utils/wallets';
+import { activateInjectedProvider, coinbaseWallet, Injected, walletconnect } from '../utils/wallets';
 import { useWeb3React } from "@web3-react/core";
 import mmImage from "./../assets/wallets/mm.png"
 import wcImage from "./../assets/wallets/wc.png"
+import cbImage from "./../assets/wallets/cb.jpg"
 
 export default function WalletConnectModal({show, setShowModal}) {
 
@@ -25,7 +26,18 @@ export default function WalletConnectModal({show, setShowModal}) {
             className="w-full flex justify-center mt-3 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary-600 hover:text-white hover:bg-primary-500 border-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             <img src={mmImage} alt='metamask' height={25} width={25} />
-            <span className='m-3'> Login with Metamask</span>
+            <span className='m-3'> Login with MetaMask Wallet</span>
+          </button>
+          <br></br>
+          <br></br>
+          <button
+            onClick={() => {
+              activate(coinbaseWallet)
+            }}
+            className="w-full flex justify-center mt-3 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-primary-600 hover:text-white hover:bg-primary-500 border-primary-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+          >
+            <img src={cbImage} alt='coinbase' height={25} width={25} />
+            <span className='m-3'> Login with CoinBase Wallet</span>
           </button>
           <br></br>
           <br></br>
@@ -36,6 +48,7 @@ export default function WalletConnectModal({show, setShowModal}) {
             <img src={wcImage} alt='Wallet Connect' height={25} width={25} />
             <span className='m-3'>Login with Wallet Connect</span>
           </button>
+          
           </div>
         </Modal.Body>
       </Modal>

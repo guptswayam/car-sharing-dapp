@@ -18,11 +18,11 @@ export function setCarContractSigner(carInstance, library) {
   return async (dispatch) => {
     const signer = library.getSigner();
     let newCarInstance = carInstance.connect(signer);
-    const isOwner = await newCarInstance.isOwner();
+    // const isOwner = await newCarInstance.isOwner();
     dispatch({
       type: actionTypes.SET_SIGNER,
       data: newCarInstance,
-      isOwner
+      isOwner: false
     })
   }
 }

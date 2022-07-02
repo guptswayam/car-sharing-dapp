@@ -14,7 +14,7 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
-  const { account, chainId, library } = useWeb3React();
+  const { account, library } = useWeb3React();
   const carInstance = useSelector((state) => state.carContractReducer.carInstance);
   const isOwner = useSelector((state) => state.carContractReducer.isOwner);
   const dispatch = useDispatch();
