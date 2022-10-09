@@ -31,17 +31,17 @@ export function activateInjectedProvider(providerName) {
 
 export const coinbaseWallet = new WalletLinkConnector({
 
-  url: process.env.REACT_APP_ROPSTEN_RPC_URL,
+  url: process.env.REACT_APP_GOERLI_RPC_URL,
  
   appName: "Car Sharing DApp",
  
-  supportedChainIds: [3],
+  supportedChainIds: process.env.REACT_APP_SUPPORTED_CHAIN_IDS.split(",")
  
  });
 
 export const walletconnect = new WalletConnectConnector({
   rpc: {
-    3: process.env.REACT_APP_INFURA_ROPSTEN_URL_FOR_WALLET_CONNECT,
+    5: process.env.REACT_APP_INFURA_GOERLI_URL_FOR_WALLET_CONNECT,
   },
   bridge: "https://bridge.walletconnect.org",
   qrcode: true,
@@ -49,5 +49,5 @@ export const walletconnect = new WalletConnectConnector({
 });
 
 export const Injected = new InjectedConnector({
-  supportedChainIds: [3],
+  supportedChainIds: process.env.REACT_APP_SUPPORTED_CHAIN_IDS.split(",").map(el => +el)
 });

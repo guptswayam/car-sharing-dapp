@@ -24,7 +24,7 @@ const Navigation = ({ account, setShowModal, isOwner }) => {
                   <Nav>
                       {account ? (
                           <Nav.Link
-                              href={`https://ropsten.etherscan.io/address/${account}`}
+                              href={`https://goerli.etherscan.io/address/${account}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="button nav-button btn-sm mx-4">
